@@ -1,0 +1,30 @@
+<svg id="Component_300_1" data-name="Component 300 – 1" xmlns="http://www.w3.org/2000/svg" width="217.2" height="48" viewBox="0 0 217.2 48">
+  <g id="Group_57938" data-name="Group 57938">
+    <g id="Group_57936" data-name="Group 57936">
+      <g id="Rectangle_23334" data-name="Rectangle 23334" fill="#fff" stroke="#e8853e" stroke-width="2">
+        <rect width="217.2" height="48" rx="10" stroke="none"/>
+        <rect x="1" y="1" width="215.2" height="46" rx="9" fill="none"/>
+      </g>
+      <g id="Group_57933" data-name="Group 57933" transform="translate(13.091 8.727)">
+        <g id="Group_57930" data-name="Group 57930" transform="translate(0)">
+          <path id="Path_87535" data-name="Path 87535" d="M0,0V30.545" transform="translate(153.818 0.545)" fill="none" stroke="#3d3d3d" stroke-width="1"/>
+          <text id="weborderit" transform="translate(0 23)" fill="#3d3d3d" font-size="24" font-family="Montserrat-Medium, Montserrat" font-weight="500"><tspan x="0" y="0">weborderit</tspan></text>
+        </g>
+        <g id="Group_57932" data-name="Group 57932" transform="translate(164.693 3.273)">
+          <path id="globe-solid" d="M4.5,12.3C4.915,9.772,5.881,8,7.006,8s2.091,1.772,2.5,4.3Zm5.214,2.713a17.714,17.714,0,0,1-.093,1.809H4.389a17.586,17.586,0,0,1,0-3.617H9.626A17.714,17.714,0,0,1,9.719,15.009ZM.543,12.3a7.023,7.023,0,0,1,4.465-4,9.538,9.538,0,0,0-1.413,4Zm8.464-4a7.019,7.019,0,0,1,4.462,4H10.417A9.5,9.5,0,0,0,9.007,8.294ZM.24,13.2H3.482c-.059.593-.093,1.2-.093,1.809s.034,1.215.093,1.809H.243A6.948,6.948,0,0,1,0,15.009,7.07,7.07,0,0,1,.24,13.2Zm10.383,1.809c0-.608-.034-1.215-.093-1.809h3.242a6.852,6.852,0,0,1,0,3.617H10.533C10.589,16.224,10.623,15.616,10.623,15.009ZM9.507,17.722c-.41,2.524-1.376,4.3-2.5,4.3s-2.091-1.772-2.5-4.3Zm-4.5,4a7.03,7.03,0,0,1-4.465-4H3.592A9.538,9.538,0,0,0,5,21.723Zm8.464-4a7.023,7.023,0,0,1-4.465,4,9.538,9.538,0,0,0,1.413-4Z" transform="translate(0 -8)" fill="#ff834f"/>
+          <path id="Path_87536" data-name="Path 87536" d="M8060.186,12441.74h-4.96l-7.034,12.059h-13.168" transform="translate(-8033.906 -12437.212)" fill="none" stroke="#ff834f" stroke-linecap="round" stroke-width="2"/>
+          <g id="Group_57931" data-name="Group 57931" transform="translate(2.182 20.727)">
+            <g id="Ellipse_3182" data-name="Ellipse 3182" fill="#ff834f" stroke="#ff834f" stroke-width="1">
+              <circle cx="2.182" cy="2.182" r="2.182" stroke="none"/>
+              <circle cx="2.182" cy="2.182" r="1.682" fill="none"/>
+            </g>
+            <g id="Ellipse_3183" data-name="Ellipse 3183" transform="translate(6.545)" fill="#ff834f" stroke="#ff834f" stroke-width="1">
+              <circle cx="2.182" cy="2.182" r="2.182" stroke="none"/>
+              <circle cx="2.182" cy="2.182" r="1.682" fill="none"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

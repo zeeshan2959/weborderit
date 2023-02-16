@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Detail</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/css/bootstrap.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <Header>
+        <div class="d-flex justify-content-between align-items-center header-container">
+            <div class="header-agency-logo-container">
+                <img src="../assets/AgencyLogo.png" alt="agency-logo">
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-end">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">John Vick</span>
+                    <span><img src="../assets/user-solid.png" alt="" height="20px" width="20px"></span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">(123)456 7890</span>
+                    <span><img src="../assets/phone-solid.png" alt="" height="20px" width="20px"></span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">john.vick@gmail.com</span>
+                    <span><img src="../assets/envelope-solid.png" alt="" height="15px" width="20px"></span>
+                </div>
+            </div>
+        </div>
+    </Header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navigation-container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto me-lg-0 mb-2 mb-lg-0 gap-4">
+                    <li class="nav-item" class="nav-item">
+                        <a href="homePage.html">Home</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="aboutPage.html">About</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="privacyPage.html">Privacy</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="#">Brokerforce <sup>&reg;</sup></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="position-relative">
+        <p class="about-heading order-detail-resp">Order Details</p>
+        <div class="position-absolute-class-image-conatiner d-flex align-item-center gap-2">
+            <div class="image-container ">
+                <img src="../assets/AgencyLogo.png" alt="">
+            </div>
+            <span class="u-primary-heading">Vendor Name</span>
+        </div>
+    </div>
+    <!-- data table -->
+    <div class="container-fluid">
+        <div class="row px-5 pb-4">
+            <!-- data table -->
+
+            <div class="my-3 flex-container-od gap-3">
+                <div class="position-relative input-number-container">
+                    <input type="text" placeholder="Item Number"
+                        class="form-control form-control-input pe-5 input-number-filed-width">
+                    <span class="absolute-position-icon absolute-position-icon-search"><img
+                            src="../assets/icons/search.svg" alt=""></span>
+                </div>
+                <div class="flex-container-2">
+                    <div id="hide-default" class="position-relative next-icon-hover">
+                        <div class="position-relative padding-start">
+                            <input type="text" placeholder="" value
+                                class="form-control form-control-input pe-5 input-number-filed-width">
+                            <span class="msg msg-text"></span>
+                            <span class="absolute-position-icon absolute-position-icon-search" type="button"
+                                data-bs-toggle="modal" data-bs-target="#productsearch"><img
+                                    src="../assets/icons/search.svg" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="container-dropdown">
+                        <div class="dropdown">
+                            <div class="select">
+                                <span>Search</span>
+                            </div>
+                            <input type="hidden" name="gender">
+                            <ul class="dropdown-menu dropdown-menu-1">
+                                <li id="Contain" onclick="showDiv()">Contain</li>
+                                <li id="Start-with" onclick="showDiv()">Start with</li>
+                                <li id="end-with" onclick="showDiv()">end with</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="container-dropdown">
+                        <div class="dropdown">
+                            <div class="select">
+                                <span>Category</span>
+                            </div>
+                            <input type="hidden" name="Category">
+                            <ul class="dropdown-menu">
+                                <li id="Custom">Custom</li>
+                                <li id="Start-with">Start with</li>
+                                <li id="end-with">end with</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button class="outline-button-common add-btn-width" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Add Item</button>
+                    </div>
+                </div>
+            </div>
+            <!-- table -->
+            <div class="col-sm-12 my-2 relative-position-table">
+
+                <div class="table-responsive table-border">
+                    <table class="table table-borderless outline-border">
+                        <thead>
+                            <tr class="table-heading-border-bpttom">
+                                <th scope="col min-w-col">Image </th>
+                                <th scope="col min-w-col">Item Number</th>
+                                <th scope="col min-w-col">Product Name</th>
+                                <th scope="col min-w-col">Price</th>
+                                <th scope="col min-w-col">QTY</th>
+                                <th scope="col min-w-col">Extended</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-data-color">
+                                    <div class="image-container">
+                                        <img src="" alt="">
+                                    </div>
+                                </td>
+                                <td class="table-data-color">
+                                    1030
+                                </td>
+                                <td class="table-data-color"> Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="table-data-color">$9987968</td>
+                                <td class="table-data-color">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="outline-button-counter">-</button>
+                                        <span class="u-dark-heading">8</span>
+                                        <button class="outline-button-counter">+</button>
+                                    </div>
+                                </td>
+                                <td class="table-data-color">$10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="table-data-color">
+                                    <div class="image-container">
+                                        <img src="" alt="">
+                                    </div>
+                                </td>
+                                <td class="table-data-color">
+                                    1030
+                                </td>
+                                <td class="table-data-color"> Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="table-data-color">$9987968</td>
+                                <td class="table-data-color">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="outline-button-counter">-</button>
+                                        <span class="u-dark-heading">8</span>
+                                        <button class="outline-button-counter">+</button>
+                                    </div>
+                                </td>
+                                <td class="table-data-color">$10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="table-data-color">
+                                    <div class="image-container">
+                                        <img src="" alt="">
+                                    </div>
+                                </td>
+                                <td class="table-data-color">
+                                    1030
+                                </td>
+                                <td class="table-data-color"> Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                <td class="table-data-color">$9987968</td>
+                                <td class="table-data-color">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <button class="outline-button-counter">-</button>
+                                        <span class="u-dark-heading">8</span>
+                                        <button class="outline-button-counter">+</button>
+                                    </div>
+                                </td>
+                                <td class="table-data-color">$10,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination-area table-border" style="margin-top: -1rem">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <span class="span-color-pagination d-flex pe-4">Items per page:</span>
+                        <div class="container-dropdown dropdown-pagination">
+                            <div id="ul-pagination" class="dropdown">
+                                <div class="select">
+                                    <span>10</span>
+                                </div>
+                                <input type="hidden" name="Category">
+                                <ul id="ul-pagination" class="dropdown-menu dropdown-menu-pagination"
+                                    style="width:10px !important">
+                                    <li id="vendor-1">10</li>
+                                    <li id="vendor-2">20</li>
+                                    <li id="vendor-3">30</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="span-color-pagination">1-7 of 7</span>
+                    <div>
+                        <span style="cursor: pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#707070" height="20px" width="15px">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </span>
+                        <span style="cursor: pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#707070" height="20px" width="15px">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="order-detail-bottom-sec my-3 gap-5">
+                    <div class="d-flex align-items-center gap-4">
+                        <p class="u-light-heading">Items</p>
+                        <p class="u-dark-heading">1000</p>
+                    </div>
+                    <div class="d-flex gap-5">
+                        <div class="d-flex align-items-center gap-4">
+                            <p class="u-light-heading">Price</p>
+                            <p class="u-dark-heading">1000</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-4">
+                            <p class="u-light-heading">QTY</p>
+                            <p class="u-dark-heading u-red-heading">$89</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-4">
+                            <p class="u-light-heading">Minimum</p>
+                            <p class="u-dark-heading">$1000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lower-buttons-sec my-3">
+                <a href="#"
+                    class="outline-button-common d-flex justify-content-between align-items-center gap-3 next-icon-hover">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" height="25px" width="30px">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                    </svg>
+                    <span>Back</span>
+                </a>
+                <div class="d-flex align-item-center gap-4">
+                    <button class="button-without-border width-fit-content" type="button" data-bs-toggle="modal"
+                        data-bs-target="#historymodal">
+                        <div class="toltip-wraper">
+                            <span class="eye-wraper" style="border: none">
+                                <svg id="clock-rotate-left-solid" xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" viewBox="0 0 24 24">
+                                    <path id="clock-rotate-left-solid-2" data-name="clock-rotate-left-solid"
+                                        d="M3.516,3.516,1.922,1.922A1.126,1.126,0,0,0,0,2.714V7.875A1.122,1.122,0,0,0,1.125,9H6.286a1.126,1.126,0,0,0,.8-1.922L5.639,5.634A9,9,0,1,1,6.858,19.388a1.5,1.5,0,1,0-1.72,2.461A12,12,0,1,0,3.516,3.516ZM12,6a1.122,1.122,0,0,0-1.125,1.125V12a1.124,1.124,0,0,0,.328.8l3.375,3.375a1.124,1.124,0,1,0,1.589-1.589L13.12,11.536V7.125A1.122,1.122,0,0,0,12,6Z"
+                                        fill="#707070" />
+                                </svg>
+                            </span>
+                            <div class="toltip-content" style="width:60px">History</div>
+                        </div>
+                        <span class="u-primary-heading" style="font-weight: 600">History</span>
+                    </button>
+                    <a href="" class="button-without-border width-fit-content">
+
+                        <div class="toltip-wraper">
+                            <span class="eye-wraper" style="border: none">
+                                <svg id="bolt-lightning-solid" xmlns="http://www.w3.org/2000/svg" width="12.737"
+                                    height="20" viewBox="0 0 14.737 24">
+                                    <path id="bolt-lightning-solid-2" data-name="bolt-lightning-solid"
+                                        d="M0,12,1.094,1.312A1.342,1.342,0,0,1,2.314,0H8.785a1.171,1.171,0,0,1,1.04,1.27,1.573,1.573,0,0,1-.065.445L7.983,7.5h5.346a1.589,1.589,0,0,1,1.408,1.72,1.981,1.981,0,0,1-.246.97L7.115,23.358A1.163,1.163,0,0,1,6.121,24H6.01a1.235,1.235,0,0,1-1.094-1.336,1.544,1.544,0,0,1,.035-.323l1.8-8.844H1.228A1.383,1.383,0,0,1,0,12Z"
+                                        fill="#707070" />
+                                </svg>
+                            </span>
+                            <div class="toltip-content" style="width:195px">Remove All with Quantity 0</div>
+                        </div>
+                        <span class="u-primary-heading" style="font-weight: 600">Remove Zero 0 QTY</span>
+                    </a>
+                    <div class="position-relative toltip-wraper width-fit-content">
+                        <input type="text" placeholder="000"
+                            class="form-control form-control-input input-number-filed-width pe-5">
+                        <span class="eye-wraper absolute-position-icon" style="border: none">
+                            <img src="../assets/icons/best-seller grey.svg" alt="">
+                        </span>
+                        <div class="toltip-content toltip" style="width:82px; top:-70%; right:0">Best Seller</div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-4">
+                    <a href="#"
+                        class="outline-button-common d-flex justify-content-between align-items-center gap-3 next-icon-hover">
+                        <span>Save</span>
+                    </a>
+
+                    <div class="toltip-wraper width-fit-content">
+                        <span class="eye-wraper" style="border: none">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#submitmodal" class="webitorder-button" style="margin: 0; padding: 0;border:none">
+                                <img src="../assets/icons/weborderit.svg" alt="">
+                            </button>
+                                
+                        </span>
+                        <div class="toltip-content toltip-content-weborderit">Submit Order</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End data table -->
+
+    <!--Modal Add item  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Category</label>
+                                        <div class="dropdown">
+                                            <div class="select">
+                                                <span>Vendor Item
+                                                    #</span>
+                                            </div>
+                                            <input type="hidden" name="Category">
+                                            <ul class="dropdown-menu">
+                                                <li id="order-count">Order Count </li>
+                                                <li id="product-name">Product Name</li>
+                                                <li id="ship-date">Ship Date</li>
+                                                <li id="extended-amount">Extended Amount</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Search</label>
+                                        <div class="dropdown">
+                                            <div class="select">
+                                                <span>Search</span>
+                                            </div>
+                                            <input type="hidden" name="Category">
+                                            <ul class="dropdown-menu">
+                                                <li id="contain-add">Contain </li>
+                                                <li id="sw-add">Start With</li>
+                                                <li id="ew-add">End With</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Product Name</label>
+                                        <div class="position-relative">
+                                            <input type="text" placeholder="Product Name"
+                                                class="form-control form-control-input">
+                                            <span class="absolute-position-icon"><img src="../assets/icons/search.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Item Number</label>
+                                        <div class="position-relative">
+                                            <input type="text" placeholder="Item Number"
+                                                class="form-control form-control-input">
+                                            <span class="absolute-position-icon"><img src="../assets/icons/search.svg"
+                                                    alt=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">
+                                            <span>QTY</span>
+                                            <span class="toltip-wraper">
+                                                <span class="eye-wraper badge" style="border: none">
+                                                    100
+                                                </span>
+                                                <div class="toltip-content" style="width: 70px;margin-left: 3rem;">MIN
+                                                    Qty</div>
+                                            </span>
+                                        </label>
+                                        <div class="d-flex align-item-center gap-3">
+                                            <button class="outline-button-counter counter-height px-3">-</button>
+                                            <input type="number" placeholder="89"
+                                                class="form-control form-control-input text-center">
+                                            <button class="outline-button-counter counter-height px-3">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Price</label>
+                                        <input type="text" placeholder="Price" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Extended</label>
+                                        <input type="text" placeholder="Extended"
+                                            class="form-control form-control-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Add item  -->
+
+    <!--Modal History  -->
+    <div class="modal fade" id="historymodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="vendor-off-canvas-container">
+                            <div class="w-100">
+                                <label for="" class="form-label-class">From</label>
+                                <input type="date" placeholder="Price" class="form-control form-control-input">
+                            </div>
+                            <div class="w-100">
+                                <label for="" class="form-label-class">To</label>
+                                <input type="date" placeholder="Price" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end my-4">
+                            <button class="outline-button-common" onclick="hideSec()">View</button>
+                        </div>
+                        <!-- table -->
+                        <div id="historyTable" class="">
+                            <div class="col-sm-12 my-2 relative-position-table">
+
+                                <div class="table-responsive table-border">
+                                    <table class="table table-borderless outline-border">
+                                        <thead>
+                                            <tr class="table-heading-border-bpttom">
+                                                <th scope="col min-w-col">
+                                                    <label for="c1" class="d-flex align-items-center gap-2">
+                                                        <input class="table-group" type="checkbox" id="c1"
+                                                            name="c-group">
+                                                    </label>
+                                                </th>
+                                                <th scope="col min-w-col">Item Number</th>
+                                                <th scope="col min-w-col">Product Name</th>
+                                                <th scope="col min-w-col">Last Date</th>
+                                                <th scope="col min-w-col">Last QTY</th>
+                                                <th scope="col min-w-col">QTY</th>
+                                                <th scope="col min-w-col">Note</th>
+                                                <th scope="col min-w-col">Price</th>
+                                                <th scope="col min-w-col">Extended</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="table-data-color">
+                                                    <label for="c1" class="d-flex align-items-center gap-2">
+                                                        <input class="table-group" type="checkbox" id="c1"
+                                                            name="c-group">
+                                                    </label>
+                                                </td>
+                                                <td class="table-data-color">
+                                                    1030
+                                                </td>
+                                                <td class="table-data-color"> Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </td>
+                                                <td class="table-data-color">12/21/1222</td>
+                                                <td class="table-data-color">968</td>
+                                                <td class="table-data-color">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="outline-button-counter">-</button>
+                                                        <span class="u-dark-heading">8</span>
+                                                        <button class="outline-button-counter">+</button>
+                                                    </div>
+                                                </td>
+                                                <td class="table-data-color">Widget</td>
+                                                <td class="table-data-color">$89798</td>
+                                                <td class="table-data-color">$89798</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-data-color">
+                                                    <label for="c1" class="d-flex align-items-center gap-2">
+                                                        <input class="table-group" type="checkbox" id="c1"
+                                                            name="c-group">
+                                                    </label>
+                                                </td>
+                                                <td class="table-data-color">
+                                                    1030
+                                                </td>
+                                                <td class="table-data-color"> Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </td>
+                                                <td class="table-data-color">12/21/1222</td>
+                                                <td class="table-data-color">968</td>
+                                                <td class="table-data-color">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="outline-button-counter">-</button>
+                                                        <span class="u-dark-heading">8</span>
+                                                        <button class="outline-button-counter">+</button>
+                                                    </div>
+                                                </td>
+                                                <td class="table-data-color">Widget</td>
+                                                <td class="table-data-color">$89798</td>
+                                                <td class="table-data-color">$89798</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-data-color">
+                                                    <label for="c1" class="d-flex align-items-center gap-2">
+                                                        <input class="table-group" type="checkbox" id="c1"
+                                                            name="c-group">
+                                                    </label>
+                                                </td>
+                                                <td class="table-data-color">
+                                                    1030
+                                                </td>
+                                                <td class="table-data-color"> Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </td>
+                                                <td class="table-data-color">12/21/1222</td>
+                                                <td class="table-data-color">968</td>
+                                                <td class="table-data-color">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="outline-button-counter">-</button>
+                                                        <span class="u-dark-heading">8</span>
+                                                        <button class="outline-button-counter">+</button>
+                                                    </div>
+                                                </td>
+                                                <td class="table-data-color">Widget</td>
+                                                <td class="table-data-color">$89798</td>
+                                                <td class="table-data-color">$89798</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="table-data-color">
+                                                    <label for="c1" class="d-flex align-items-center gap-2">
+                                                        <input class="table-group" type="checkbox" id="c1"
+                                                            name="c-group">
+                                                    </label>
+                                                </td>
+                                                <td class="table-data-color">
+                                                    1030
+                                                </td>
+                                                <td class="table-data-color"> Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </td>
+                                                <td class="table-data-color">12/21/1222</td>
+                                                <td class="table-data-color">968</td>
+                                                <td class="table-data-color">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <button class="outline-button-counter">-</button>
+                                                        <span class="u-dark-heading">8</span>
+                                                        <button class="outline-button-counter">+</button>
+                                                    </div>
+                                                </td>
+                                                <td class="table-data-color">Widget</td>
+                                                <td class="table-data-color">$89798</td>
+                                                <td class="table-data-color">$89798</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="pagination-area table-border" style="margin-top: -1rem">
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        <span class="span-color-pagination d-flex pe-4">Items per page:</span>
+                                        <div class="container-dropdown dropdown-pagination">
+                                            <div class="dropdown">
+                                                <div class="select">
+                                                    <span>10</span>
+                                                </div>
+                                                <input type="hidden" name="Category">
+                                                <ul class="dropdown-menu dropdown-menu-pagination">
+                                                    <li id="vendor-1">10</li>
+                                                    <li id="vendor-2">20</li>
+                                                    <li id="vendor-3">30</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="span-color-pagination">1-7 of 7</span>
+                                    <div>
+                                        <span style="cursor: pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="#707070" height="20px" width="15px">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </span>
+                                        <span style="cursor: pointer">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="#707070" height="20px" width="15px">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end my-4 pt-3">
+                                <button class="outline-button-common">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Add item  -->
+
+    <!--Modal Submit Order  -->
+    <div class="modal fade" id="submitmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Submit Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-4 text-center pt-4 pb-5">
+                                <div class="col-12">
+                                    <p>Are you sure to submit?</p>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center align-item-center gap-3">
+                                    <button class="fill-button">No</button>
+                                    <button class="fill-button">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal submit order  -->
+
+    <!--Product search  -->
+    <div class="modal fade" id="productsearch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Product Search Results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- table -->
+                    <div class="col-sm-12 my-2 relative-position-table">
+
+                        <div class="table-responsive table-border">
+                            <table class="table table-borderless outline-border">
+                                <thead>
+                                    <tr class="table-heading-border-bpttom">
+                                        <th scope="col min-w-col">Image </th>
+                                        <th scope="col min-w-col">Item Number</th>
+                                        <th scope="col min-w-col">Product Name</th>
+                                        <th scope="col min-w-col">Price</th>
+                                        <th scope="col min-w-col">QTY</th>
+                                        <th scope="col min-w-col">Extended</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-color">
+                                            <div class="image-container">
+                                                <img src="" alt="">
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">
+                                            1030
+                                        </td>
+                                        <td class="table-data-color">
+                                            <div class="toltip-wraper">
+                                                <span class="eye-wraper" style="border: none">
+                                                    Widget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                </span>
+                                                <div class="toltip-content" style="width: auto">Widget
+                                                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$9987968</td>
+                                        <td class="table-data-color">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <button class="outline-button-counter">-</button>
+                                                <span class="u-dark-heading">8</span>
+                                                <button class="outline-button-counter">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="table-data-color">$10,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pagination-area table-border" style="margin-top: -1rem">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <span class="span-color-pagination d-flex pe-4">Items per page:</span>
+                                <div class="container-dropdown dropdown-pagination">
+                                    <div class="dropdown">
+                                        <div class="select">
+                                            <span>10</span>
+                                        </div>
+                                        <input type="hidden" name="Category">
+                                        <ul class="dropdown-menu dropdown-menu-pagination">
+                                            <li id="vendor-1">10</li>
+                                            <li id="vendor-2">20</li>
+                                            <li id="vendor-3">30</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="span-color-pagination">1-7 of 7</span>
+                            <div>
+                                <span style="cursor: pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#707070" height="20px" width="15px">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </span>
+                                <span style="cursor: pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="#707070" height="20px" width="15px">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../styles/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        /*Dropdown Menu*/
+        $('.dropdown').click(function () {
+            $(this).attr('tabindex', 1).focus();
+            $(this).toggleClass('active');
+            $(this).find('.dropdown-menu').slideToggle(300);
+        });
+        $('.dropdown').focusout(function () {
+            $(this).removeClass('active');
+            $(this).find('.dropdown-menu').slideUp(300);
+        });
+        $('.dropdown .dropdown-menu li').click(function () {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+        });
+        /*End Dropdown Menu*/
+
+
+        $('.dropdown-menu-1 li').click(function () {
+            var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+                msg = '<span class="msg">';
+            $('.msg').html(msg + input + '</span>');
+        }); 
+    </script>
+</body>
+
+</html>

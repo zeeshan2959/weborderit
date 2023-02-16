@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/css/bootstrap.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <Header>
+    <div class="d-flex justify-content-between align-items-center header-container">
+      <div class="header-agency-logo-container">
+        <img src="../assets/AgencyLogo.png" alt="agency-logo">
+      </div>
+      <div class="d-flex flex-column align-items-end justify-content-end">
+        <div class="d-flex align-items-center gap-3">
+          <span class="user-desc">John Vick</span>
+          <span><img src="../assets/user-solid.png" alt="" height="20px" width="20px"></span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span class="user-desc">(123)456 7890</span>
+          <span><img src="../assets/phone-solid.png" alt="" height="20px" width="20px"></span>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span class="user-desc">john.vick@gmail.com</span>
+          <span><img src="../assets/envelope-solid.png" alt="" height="15px" width="20px"></span>
+        </div>
+      </div>
+    </div>
+  </Header>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navigation-container" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto me-lg-0 mb-2 mb-lg-0 gap-4">
+          <li class="nav-item" class="nav-item">
+            <a href="homePage.html">Home</a>
+          </li>
+          <li class="nav-item" class="nav-item">
+            <a href="aboutPage.html">About</a>
+          </li>
+          <li class="nav-item" class="nav-item">
+            <a href="privacyPage.html">Privacy</a>
+          </li>
+          <li class="nav-item" class="nav-item">
+            <a href="#">Brokerforce <sup>&reg;</sup></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <p class="about-heading">ACME Order List</p>
+  </div>
+
+  <!-- data table -->
+  <div class="container-fluid">
+    <div class="row px-5 pb-4">
+
+      <div class="my-3 d-flex flex-column flex-sm-row justify-content-end gap-3">
+        <div>
+          <input type="date" class="form-control form-control-input">
+        </div>
+        <div class="container-dropdown">
+          <div class="dropdown">
+            <div class="select">
+              <span>Vendor</span>
+            </div>
+            <input type="hidden" name="Category">
+            <ul class="dropdown-menu">
+              <li id="vendor-1">vendor 1</li>
+              <li id="vendor-2">vendor 2</li>
+              <li id="vendor-3">vendor 3</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <button class="outline-button-common" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18.002" viewBox="0 0 18 18.002">
+              <path id="Shape_1195" data-name="Shape 1195"
+                d="M1678.71,161.524l-3.505-3.505a.841.841,0,0,0-.6-.246h-.574a7.3,7.3,0,1,0-1.265,1.266v.572a.843.843,0,0,0,.245.6l3.507,3.5a.839.839,0,0,0,1.192,0l1-.994A.85.85,0,0,0,1678.71,161.524Zm-10.442-3.751a4.5,4.5,0,1,1,4.5-4.5A4.5,4.5,0,0,1,1668.268,157.773Z"
+                transform="translate(-1660.954 -145.961)" fill="#707070" />
+            </svg>
+
+          </button>
+        </div>
+      </div>
+      <!-- table -->
+      <div class="col-sm-12 my-2 relative-position-table">
+
+        <div class="table-responsive table-border">
+          <table class="table table-borderless outline-border">
+            <thead>
+              <tr class="table-heading-border-bpttom">
+                <th scope="col min-w-col">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <th scope="col min-w-col">Vendor </th>
+                <th scope="col min-w-col">Ship Date</th>
+                <th scope="col min-w-col">PO Number</th>
+                <th scope="col min-w-col">Status</th>
+                <th scope="col min-w-col">Order Date</th>
+                <th scope="col min-w-col">Type</th>
+                <th scope="col min-w-col">Order Amount</th>
+                <th scope="col min-w-col">Invoice Amount</th>
+                <th scope="col min-w-col">View</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+              <tr class="table-data-text">
+                <th scope="row">
+                  <label for="c1" class="d-flex align-items-center gap-2">
+                    <input class="table-group" type="checkbox" id="c1" name="c-group">
+                  </label>
+                </th>
+                <td class="min-w-col">Mark</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">A1234567</td>
+                <td class="min-w-col">Quote</td>
+                <td class="min-w-col">01/13/2022</td>
+                <td class="min-w-col">WOI </td>
+                <td class="min-w-col">10,000</td>
+                <td class="min-w-col">0</td>
+                <td class="min-w-col d-flex align-items-center gap-2">
+                  <div class="toltip-wraper">
+                    <span class="eye-wraper">
+                      <svg id="Component_297_1" data-name="Component 297 – 1" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="10" viewBox="0 0 16 10">
+                        <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(4 1)" fill="none"
+                          stroke="#a7a7a7" stroke-width="1">
+                          <ellipse cx="4" cy="4" rx="4" ry="4" stroke="none" />
+                          <ellipse cx="4" cy="4" rx="3.5" ry="3.5" fill="none" />
+                        </g>
+                        <g id="Path_66" data-name="Path 66" transform="translate(3)" fill="none">
+                          <path d="M5,0c2.761,0,8,3.8,8,5s-5.238,5-8,5S-3,6.4-3,5,2.238,0,5,0Z" stroke="none" />
+                          <path
+                            d="M 4.9998779296875 0.9999990463256836 C 4.010357856750488 0.9999990463256836 2.373787879943848 1.641199111938477 0.7288084030151367 2.673378944396973 C -0.9026165008544922 3.697047710418701 -1.78783130645752 4.635804176330566 -1.976385116577148 4.99993896484375 C -1.78783130645752 5.364073753356934 -0.9026165008544922 6.302829742431641 0.7288084030151367 7.326498985290527 C 2.373787879943848 8.358678817749023 4.010357856750488 8.999878883361816 4.9998779296875 8.999878883361816 C 5.951667785644531 8.999878883361816 7.568048000335693 8.344279289245605 9.218228340148926 7.288918972015381 C 10.76554584503174 6.299351692199707 11.67495727539062 5.398376941680908 11.94406127929688 4.99993896484375 C 11.67495727539062 4.601500988006592 10.76554584503174 3.700526237487793 9.218228340148926 2.710958957672119 C 7.568048000335693 1.655598640441895 5.951667785644531 0.9999990463256836 4.9998779296875 0.9999990463256836 M 4.9998779296875 -9.5367431640625e-07 C 7.761258125305176 -9.5367431640625e-07 12.99975776672363 3.799998760223389 12.99975776672363 4.99993896484375 C 12.99975776672363 6.199878692626953 7.761258125305176 9.999878883361816 4.9998779296875 9.999878883361816 C 2.238497734069824 9.999878883361816 -3.000001907348633 6.399828910827637 -3.000001907348633 4.99993896484375 C -3.000001907348633 3.600049018859863 2.238497734069824 -9.5367431640625e-07 4.9998779296875 -9.5367431640625e-07 Z"
+                            stroke="none" fill="#a7a7a7" />
+                        </g>
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View Order</div>
+                  </div>
+
+                  <div class="toltip-wraper">
+                    <span class="pfd-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16.854" height="22.854"
+                        viewBox="0 0 18.854 24.854">
+                        <path id="file-pdf-solid"
+                          d="M3,0A3,3,0,0,0,0,3V21a3,3,0,0,0,3,3H15a3,3,0,0,0,3-3V7.5H12A1.5,1.5,0,0,1,10.5,6V0Zm9,0V6h6ZM3,10.5H4.125a2.625,2.625,0,1,1,0,5.25H3.75v1.5a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,3,10.5Zm1.125,3.75a1.125,1.125,0,0,0,0-2.25H3.75v2.25Zm3.375-3a.752.752,0,0,1,.75-.75H9.375a2.251,2.251,0,0,1,2.25,2.25v3A2.251,2.251,0,0,1,9.375,18H8.25a.752.752,0,0,1-.75-.75ZM9,16.5h.375a.752.752,0,0,0,.75-.75v-3a.752.752,0,0,0-.75-.75H9Zm4.5-6h2.25a.75.75,0,0,1,0,1.5h-1.5v1.5h1.5a.75.75,0,0,1,0,1.5h-1.5v2.25a.75.75,0,0,1-1.5,0v-6A.752.752,0,0,1,13.5,10.5Z"
+                          transform="translate(0.25 0.604)" fill="#707070" stroke="#e8853e" stroke-width="0.5" />
+                      </svg>
+                    </span>
+                    <div class="toltip-content">View PDF</div>
+                  </div>
+
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination-area table-border">
+          <div class="d-flex align-items-center justify-content-end">
+            <span class="span-color-pagination d-flex pe-4">Items per page:</span>
+            
+            <div class="container-dropdown dropdown-pagination">
+              <div class="dropdown">
+                <div class="select">
+                  <span>10</span>
+                </div>
+                <input type="hidden" name="Category">
+                <ul class="dropdown-menu dropdown-menu-pagination">
+                  <li id="vendor-1">10</li>
+                  <li id="vendor-2">20</li>
+                  <li id="vendor-3">30</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <span class="span-color-pagination">1-7 of 7</span>
+          <div>
+            <span style="cursor: pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="#707070" height="20px" width="15px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </span>
+            <span style="cursor: pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="#707070" height="20px" width="15px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end my-4">
+        <button class="outline-button-common d-flex align-items-center gap-3">
+          <span>DownLoad</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16.229" height="19.951" viewBox="0 0 19.229 22.951">
+            <path id="circle-down-solid"
+              d="M18.38,29.691,9.967,21.279a1.2,1.2,0,0,1,.849-2.051h4.178l-.018-9.735a2.4,2.4,0,0,1,2.4-2.4h3.4a2.4,2.4,0,0,1,2.4,2.4l.012,9.735h4.442a1.2,1.2,0,0,1,1.112.744,1.189,1.189,0,0,1-.263,1.307l-8.412,8.412a1.206,1.206,0,0,1-1.7,0Z"
+              transform="translate(-9.616 -7.09)" fill="#707070" />
+          </svg>
+
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- data table -->
+
+  <!-- custom js -->
+  <script src="../scripts/script.js"></script>
+  <script src="../styles/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    /*Dropdown Menu*/
+    $('.dropdown').click(function () {
+      $(this).attr('tabindex', 1).focus();
+      $(this).toggleClass('active');
+      $(this).find('.dropdown-menu').slideToggle(300);
+    });
+    $('.dropdown').focusout(function () {
+      $(this).removeClass('active');
+      $(this).find('.dropdown-menu').slideUp(300);
+    });
+    $('.dropdown .dropdown-menu li').click(function () {
+      $(this).parents('.dropdown').find('span').text($(this).text());
+      $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+    });
+    /*End Dropdown Menu*/
+
+
+    $('.dropdown-menu-1 li').click(function () {
+      var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+        msg = '<span class="msg">';
+      $('.msg').html(msg + input + '</span>');
+    }); 
+  </script>
+</body>
+
+</html>

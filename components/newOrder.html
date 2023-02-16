@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/css/bootstrap.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+</head>
+
+<body>
+    <Header>
+        <div class="d-flex justify-content-between align-items-center header-container">
+            <div class="header-agency-logo-container">
+                <img src="../assets/AgencyLogo.png" alt="agency-logo">
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-end">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">John Vick</span>
+                    <span><img src="../assets/user-solid.png" alt="" height="20px" width="20px"></span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">(123)456 7890</span>
+                    <span><img src="../assets/phone-solid.png" alt="" height="20px" width="20px"></span>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="user-desc">john.vick@gmail.com</span>
+                    <span><img src="../assets/envelope-solid.png" alt="" height="15px" width="20px"></span>
+                </div>
+            </div>
+        </div>
+    </Header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navigation-container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto me-lg-0 mb-2 mb-lg-0 gap-4">
+                    <li class="nav-item" class="nav-item">
+                        <a href="homePage.html">Home</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="aboutPage.html">About</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="privacyPage.html">Privacy</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="#">Brokerforce <sup>&reg;</sup></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <p class="about-heading">Header/New Order</p>
+        <div class="container-fluid">
+            <div class="row p-4 gy-3">
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Select Vendor</label>
+                        <div class="dropdown">
+                            <div class="select">
+                                <span>Select Vendor</span>
+                            </div>
+                            <input type="hidden" name="Category">
+                            <ul class="dropdown-menu">
+                                <li id="v-1">Vendor 1</li>
+                                <li id="v-2">Vendor 2</li>
+                                <li id="v-3">Vendor 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Customer</label>
+                        <input type="text" placeholder="Customer" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Ship Name</label>
+                        <input type="text" placeholder="Ship Name" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-12" id="address-sec">
+                    <div class="row mx-4 inner-container gy-4 my-3">
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Bill Address 1</label>
+                                <input type="text" placeholder="Bill Address 1" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Bill Address 2</label>
+                                <input type="text" placeholder="Bill Address 2" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4 d-flex justify-content-between align-items-center">
+                                <label for="" class="form-label-class" style="color:#E8853E">Change the Bill Address to
+                                    Ship Addess
+                                </label>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="toggle-button">
+                                        <span class="slider blue" id="round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Bill City</label>
+                                <input type="text" placeholder="Bill City" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Bill State</label>
+                                <input type="text" placeholder="Bill State" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Bill To Postal Code</label>
+                                <input type="text" placeholder="Bill To Postal Code"
+                                    class="form-control form-control-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" id="ship-sec">
+                    <div class="row mx-4 inner-container gy-4 my-3">
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Ship Address 1</label>
+                                <input type="text" placeholder="Bill Address 1" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Ship Address 2</label>
+                                <input type="text" placeholder="Bill Address 2" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4 d-flex justify-content-between align-items-center">
+                                <label for="" class="form-label-class" style="color:#E8853E">Change the Ship Address to
+                                    Bill Addess</label>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider blue" id="round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Shipping City</label>
+                                <input type="text" placeholder="Bill City" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Shipping State</label>
+                                <input type="text" placeholder="Bill State" class="form-control form-control-input">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="w-100 px-4">
+                                <label for="" class="form-label-class">Ship To Postal Code</label>
+                                <input type="text" placeholder="Bill To Postal Code"
+                                    class="form-control form-control-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Credit Card</label>
+                        <div class="dropdown">
+                            <div class="select">
+                                <span>Credit Card</span>
+                            </div>
+                            <input type="hidden" name="Category">
+                            <ul class="dropdown-menu">
+                                <li id="credit-1">Credit Card</li>
+                                <li id="credit-2">Credit Card 2</li>
+                                <li id="credit-3">Credit Card 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Buyer</label>
+                        <div class="dropdown">
+                            <div class="select">
+                                <span>Buyer</span>
+                            </div>
+                            <input type="hidden" name="Category">
+                            <ul class="dropdown-menu">
+                                <li id="buyer-1">Buyer 1</li>
+                                <li id="buyer-2">Buyer 2</li>
+                                <li id="buyer-3">Buyer 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Email Address</label>
+                        <input type="text" placeholder="Email Address" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Order Date</label>
+                        <input type="date" placeholder="Order Date" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Ship Date</label>
+                        <input type="date" placeholder="Ship Date" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Cancel Date</label>
+                        <input type="date" placeholder="Cancel Date" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">PO Number</label>
+                        <input type="number" placeholder="PO Number" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Status</label>
+                        <input type="text" placeholder="Status" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Type</label>
+                        <input type="text" placeholder="Type" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Note</label>
+                        <textarea placeholder="Note" class="form-control form-control-input"
+                            id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Other Amount</label>
+                        <input type="text" placeholder="Other Amount" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Discount %</label>
+                        <input type="text" placeholder="Discount %" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Discount Amount</label>
+                        <input type="text" placeholder="Discount Amount" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">No. of Items</label>
+                        <input type="text" placeholder="No. opf Items" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Quantity</label>
+                        <input type="text" placeholder="Quantity" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="w-100 px-4">
+                        <label for="" class="form-label-class">Net Amount</label>
+                        <input type="text" placeholder="Net Amount" class="form-control form-control-input">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center p-4">
+                        <button class="outline-button-common">New</button>
+                        <a href="orderDetails.html"
+                            class="outline-button-common d-flex justify-content-between align-items-center gap-3 next-icon-hover"><span>Item
+                                Next</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" height="25px" width="30px">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/script.js"></script>
+    <script src="../styles/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        /*Dropdown Menu*/
+        $('.dropdown').click(function () {
+            $(this).attr('tabindex', 1).focus();
+            $(this).toggleClass('active');
+            $(this).find('.dropdown-menu').slideToggle(300);
+        });
+        $('.dropdown').focusout(function () {
+            $(this).removeClass('active');
+            $(this).find('.dropdown-menu').slideUp(300);
+        });
+        $('.dropdown .dropdown-menu li').click(function () {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+        });
+        /*End Dropdown Menu*/
+
+
+        $('.dropdown-menu-1 li').click(function () {
+            var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+                msg = '<span class="msg">';
+            $('.msg').html(msg + input + '</span>');
+        }); 
+    </script>
+</body>
+
+</html>

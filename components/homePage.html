@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/css/bootstrap.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <Header>
+        <div class="d-flex justify-content-between align-items-center header-container">
+            <div class="header-agency-logo-container">
+                <img src="../assets/AgencyLogo.png" alt="agency-logo">
+            </div>
+            <div class="d-flex align-items-center">
+
+                <div class="d-flex flex-column align-items-end justify-content-end">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="user-desc">John Vick</span>
+                        <span><img src="../assets/user-solid.png" alt="" height="14px" width="14px"></span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="user-desc">(123)456 7890</span>
+                        <span><img src="../assets/phone-solid.png" alt="" height="14px" width="14px"></span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="user-desc">john.vick@gmail.com</span>
+                        <span><img src="../assets/envelope-solid.png" alt="" height="10px" width="14px"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Header>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navigation-container" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto me-lg-0 mb-2 mb-lg-0 gap-4">
+                    <li class="nav-item" class="nav-item">
+                        <a href="homePage.html" class="active-tab">Home</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="aboutPage.html">About</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="privacyPage.html">Privacy</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item" class="nav-item">
+                        <a href="google.com" target="_blank">Brokerforce <sup>&reg;</sup></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-3">
+        <div class="row gx-5">
+
+            <div class="col-lg-4 my-4 my-lg-0">
+                <div class="order-box">
+                    <p class="order-box-heading">Vendors</p>
+                    <ul class="order-box-list">
+                        <li><a href="vendorList.html">List</a></li>
+                        <li>
+                            <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#pricelistmodal">
+                                Price List
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 my-4 my-lg-0">
+                <div class="order-box">
+                    <p class="order-box-heading">Orders</p>
+                    <ul class="order-box-list">
+                        <li><a href="orderList.html">List</a></li>
+                        <li><a href="newOrder.html">New</a></li>
+                        <li><a href="reportOrders.html">Orders Incomplete</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 my-4 my-lg-0">
+                <div class="order-box">
+                    <p class="order-box-heading">Reports</p>
+                    <ul class="order-box-list">
+                        <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#journalmodal">Orders
+                                Journal
+                            </a>
+                        </li>
+                        <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#itemsale">Item Sales
+                            </a>
+                        </li>
+                        <li><a href="reportOrders.html">Orders</a></li>
+                        <li><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#ordertotals">Order Totals
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-end my-5">
+        
+        <div class="toltip-wraper">
+            <span class="eye-wraper" style="border: none">
+                <button class="logout-button" type="button" data-bs-toggle="modal" data-bs-target="#logoutmodal">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" height="25px" width="25px">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                </button>
+            </span>
+            <div class="toltip-content" style="top: -30px;width:58px">logout</div>
+        </div>
+    </div>
+
+
+    <!--Price List Modal  -->
+    <div class="modal fade" id="pricelistmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Price List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-2 md-gy-0">
+                                <div class="col-md-6">
+                                    <label for="" class="form-label-class">Sort</label>
+                                    <div class="select customized-select">
+                                        <div class="dropdown">
+                                            <div class="select">
+                                                <span>Vendor Item
+                                                    #</span>
+                                            </div>
+                                            <input type="hidden" name="Category">
+                                            <ul class="dropdown-menu">
+                                                <li id="order-count">Order Count </li>
+                                                <li id="product-name">Product Name</li>
+                                                <li id="ship-date">Ship Date</li>
+                                                <li id="extended-amount">Extended Amount</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="" class="form-label-class">Select Vendor</label>
+                                    <div class="select customized-select">
+                                        <div class="dropdown">
+                                            <div class="select">
+                                                <span>Select Vendor</span>
+                                            </div>
+                                            <input type="hidden" name="Category">
+                                            <ul class="dropdown-menu">
+                                                <li id="v-1">Vendor 1</li>
+                                                <li id="v-2">Vendor 2</li>
+                                                <li id="v-3">Vendor 3</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Price List Modal  -->
+
+    <!--Order Journal Modal  -->
+    <div class="modal fade" id="journalmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Orders Journal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-column gap-2">
+                                        <label for="c1" class="d-flex align-items-center gap-2">
+                                            <input class="cb-group" type="checkbox" id="c1" name="c-group">
+                                            <span class="label-text-cr">Detail</span>
+                                        </label>
+                                        <label for="all-vendor" class="d-flex align-items-center gap-2 drop">
+                                            <input id="myCheck" onclick="myFunction('myCheck','text-cb')"
+                                                class="cb-group" type="checkbox" name="c-group" checked>
+                                            <span class="label-text-cr">All Vendors</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Top</label>
+                                        <input type="text" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div id="text-cb" style="display:none" class="col-md-6 all-vendor ">
+                                            <div class="">
+                                                <label for="" class="form-label-class">Select Vendor</label>
+                                                <div class="container-dropdown w-100">
+                                                    <div class="dropdown">
+                                                        <div class="select">
+                                                            <span>Select Vendor</span>
+                                                        </div>
+                                                        <input type="hidden" name="Category">
+                                                        <ul class="dropdown-menu">
+                                                            <li id="vendor-1">Vendor 1</li>
+                                                            <li id="vendor-2">Vendor 2</li>
+                                                            <li id="vendor-3">Vendor 3</li>
+                                                        </ul>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="">
+                                        <label for="" class="form-label-class">Sort</label>
+                                        <div class="container-dropdown w-100">
+                                            <div class="dropdown">
+                                                <div class="select">
+                                                    <span>Order Count</span>
+                                                </div>
+                                                <input type="hidden" name="Category">
+                                                <ul class="dropdown-menu">
+                                                    <li id="Product">Product Name</li>
+                                                    <li id="Ship-date">Ship Date</li>
+                                                    <li id="Extended-amount">Extended Amount</li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                                        <label for="" class="form-label-class">Date Range</label>
+                                        <div class="d-flex align-items-center gap-2 gap-md-5">
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Cancel</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Ship</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Order</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">From</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">To</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Order Journal Modal  -->
+
+    <!--Item sale Modal  -->
+    <div class="modal fade" id="itemsale" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Item Sales</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-column gap-2">
+                                        <label for="c1" class="d-flex align-items-center gap-2">
+                                            <input class="cb-group" type="checkbox" id="c1" name="c-group">
+                                            <span class="label-text-cr">Detail</span>
+                                        </label>
+                                        <label for="all-vendor" class="d-flex align-items-center gap-2 drop">
+                                            <input id="myCheck1" onclick="myFunction('myCheck1','sec-idd')"
+                                                class="cb-group" type="checkbox" name="c-group" checked>
+                                            <span class="label-text-cr">All Vendors</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Top</label>
+                                        <input type="text" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div id="sec-idd" style="display:none" class="col-md-6 all-vendor">
+                                            <div class="">
+                                                <label for="" class="form-label-class">Select Vendor</label>
+                                                <div class="container-dropdown w-100">
+                                                    <div class="dropdown">
+                                                        <div class="select">
+                                                            <span>Select Vendor</span>
+                                                        </div>
+                                                        <input type="hidden" name="Category">
+                                                        <ul class="dropdown-menu">
+                                                            <li id="vendor-1">Vendor 1</li>
+                                                            <li id="vendor-2">Vendor 2</li>
+                                                            <li id="vendor-3">Vendor 3</li>
+                                                        </ul>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="">
+                                        <label for="" class="form-label-class">Sort</label>
+                                        <div class="container-dropdown w-100">
+                                            <div class="dropdown">
+                                                <div class="select">
+                                                    <span>Order Count</span>
+                                                </div>
+                                                <input type="hidden" name="Category">
+                                                <ul class="dropdown-menu">
+                                                    <li id="Product">Product Name</li>
+                                                    <li id="Ship-date">Ship Date</li>
+                                                    <li id="Extended-amount">Extended Amount</li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                                        <label for="" class="form-label-class">Date Range</label>
+                                        <div class="d-flex align-items-center gap-2 gap-md-5">
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Cancel</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Ship</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Order</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">From</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">To</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--item sale Modal  -->
+
+
+    <!--order totals Modal  -->
+    <div class="modal fade" id="ordertotals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title u-dark-heading" id="exampleModalLabel">Order Totals</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="container-fluid">
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                    <div class="d-flex flex-column gap-2">
+                                        <label for="c1" class="d-flex align-items-center gap-2">
+                                            <input class="cb-group" type="checkbox" id="c1" name="c-group">
+                                            <span class="label-text-cr">Detail</span>
+                                        </label>
+                                        <label for="all-vendor" class="d-flex align-items-center gap-2 drop">
+                                            <input id="myCheck3" onclick="myFunction('myCheck3','sec-id')"
+                                                class="cb-group" type="checkbox" name="c-group" checked>
+                                            <span class="label-text-cr">All Vendors</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class">Top</label>
+                                        <input type="text" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div id="sec-id" style="display:none" class="col-md-6 all-vendor">
+                                            <div class="w-50">
+                                                <label for="" class="form-label-class">Select Vendor</label>
+                                                <div class="container-dropdown w-100">
+                                                    <div class="dropdown">
+                                                        <div class="select">
+                                                            <span>Select Vendor</span>
+                                                        </div>
+                                                        <input type="hidden" name="Category">
+                                                        <ul class="dropdown-menu">
+                                                            <li id="vendor-1">Vendor 1</li>
+                                                            <li id="vendor-2">Vendor 2</li>
+                                                            <li id="vendor-3">Vendor 3</li>
+                                                        </ul>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="">
+                                        <label for="" class="form-label-class">Sort</label>
+                                        <div class="container-dropdown w-100">
+                                            <div class="dropdown">
+                                                <div class="select">
+                                                    <span>Order Count</span>
+                                                </div>
+                                                <input type="hidden" name="Category">
+                                                <ul class="dropdown-menu">
+                                                    <li id="Product">Product Name</li>
+                                                    <li id="Ship-date">Ship Date</li>
+                                                    <li id="Extended-amount">Extended Amount</li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                                        <label for="" class="form-label-class">Date Range</label>
+                                        <div class="d-flex align-items-center gap-2 gap-md-5">
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Cancel</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Ship</span>
+                                            </label>
+                                            <label for="r1" class="d-flex align-items-center gap-2">
+                                                <input class="cb-group" type="radio" id="r1" name="r-group">
+                                                <span class="label-text-cr">Order</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">From</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="w-100">
+                                        <label for="" class="form-label-class text-color-primary">To</label>
+                                        <input type="date" placeholder="000" class="form-control form-control-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="outline-button-common">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--order totals Modal  -->
+
+
+    <!-- logout modal -->
+    <div class="modal fade" id="logoutmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title utility-headiing" id="exampleModalLabel">Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to logout ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close-modal" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="fill-button">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../scripts/script.js"></script>
+    <script src="../styles/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        /*Dropdown Menu*/
+        $('.dropdown').click(function () {
+            $(this).attr('tabindex', 1).focus();
+            $(this).toggleClass('active');
+            $(this).find('.dropdown-menu').slideToggle(300);
+        });
+        $('.dropdown').focusout(function () {
+            $(this).removeClass('active');
+            $(this).find('.dropdown-menu').slideUp(300);
+        });
+        $('.dropdown .dropdown-menu li').click(function () {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+        });
+        /*End Dropdown Menu*/
+
+
+        $('.dropdown-menu-1 li').click(function () {
+            var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+                msg = '<span class="msg">';
+            $('.msg').html(msg + input + '</span>');
+        }); 
+    </script>
+
+</body>
+
+</html>
